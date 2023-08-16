@@ -39,10 +39,10 @@ import {
 
 export type Channel = {
   // id: number;
-  // channel_id: string;
+  // channel_id: string
   title: string
   // description?: string;
-  // custom_url?: string;
+  custom_url?: string
   country?: string
   view_count: number
   // subscriber_count: number;
@@ -96,6 +96,13 @@ export const columns: ColumnDef<any>[] = [
       <div className='capitalize'>{row.getValue('country')}</div>
     ),
   },
+  {
+    accessorKey: 'custom_url',
+    header: 'Custom Name',
+    cell: ({ row }) => (
+      <div className='capitalize'>{row.getValue('custom_url')}</div>
+    ),
+  },
 ]
 
 export function DataTable({ channels }: DataTableProps) {
@@ -129,7 +136,7 @@ export function DataTable({ channels }: DataTableProps) {
 
   return (
     <>
-      <div className='rounded-md border mt-6'>
+      <div className='rounded-md border mt-6 overflow-scroll'>
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
