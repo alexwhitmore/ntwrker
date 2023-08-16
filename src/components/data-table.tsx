@@ -48,7 +48,7 @@ export type Channel = {
   // subscriber_count: number;
   // video_count: number;
   // category?: string;
-  // image_url?: string;
+  image_url?: string
 }
 
 interface DataTableProps {
@@ -102,6 +102,22 @@ export const columns: ColumnDef<any>[] = [
     cell: ({ row }) => (
       <div className='capitalize'>{row.getValue('custom_url')}</div>
     ),
+  },
+  {
+    accessorKey: 'image_url',
+    header: 'Picture',
+    cell: ({ row }) => {
+      return (
+        <Avatar>
+          <img
+            src='https://hhltmpiizvmmcjlkxeos.supabase.co/storage/v1/object/public/images/56457wbv4rtdfgh.jpeg'
+            alt=''
+          />
+          {/* <img src={row.getValue('image_url')} alt='' /> */}
+          <AvatarFallback>CN</AvatarFallback>
+        </Avatar>
+      )
+    },
   },
 ]
 
