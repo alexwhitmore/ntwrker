@@ -1,7 +1,7 @@
 import { redirect } from 'next/navigation'
 
-import { authOptions } from '@/lib/auth'
-import { getCurrentUser } from '@/lib/session'
+// import { authOptions } from '@/lib/auth'
+// import { getCurrentUser } from '@/lib/session'
 // import { stripe } from '@/lib/stripe'
 import { getUserSubscriptionPlan } from '@/lib/subscription'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'

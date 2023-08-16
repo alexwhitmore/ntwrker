@@ -3,7 +3,8 @@ import Link from 'next/link'
 export default function Docs() {
   return (
     <div>
-      <h1>Documentation Page</h1>
+      hi
+      {/* <h1>Documentation Page</h1>
       <br />
       <p>
         I'm not sure if this should link back to the blog, where I can simply
@@ -17,7 +18,7 @@ export default function Docs() {
         want to add onto it.
       </p>
       <br />
-      <Link href='/dashboard'>Dashboard</Link>
+      <Link href='/dashboard'>Dashboard</Link> */}
     </div>
   )
 }

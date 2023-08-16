@@ -6,7 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
-import { DataTable } from '@/components/data-table'
+// import { DataTable } from '@/components/data-table'
 
 export function StatItem() {
   return (
@@ -49,7 +49,7 @@ export function StatItem() {
           </CardFooter>
         </Card>
       </div>
-      <DataTable />
+      {/* <DataTable /> */}
     </div>
   )
 }
