@@ -45,8 +45,8 @@ export type Channel = {
   custom_url?: string
   country?: string
   view_count: number
-  // subscriber_count: number;
-  // video_count: number;
+  subscriber_count: number
+  video_count: number
   // category?: string;
   image_url?: string
 }
@@ -90,34 +90,45 @@ export const columns: ColumnDef<any>[] = [
     ),
   },
   {
-    accessorKey: 'country',
-    header: 'Country',
+    accessorKey: 'subscriber_count',
+    header: 'Subscriber Count',
     cell: ({ row }) => (
-      <div className='capitalize'>{row.getValue('country')}</div>
+      <div className='capitalize'>{row.getValue('subscriber_count')}</div>
     ),
   },
   {
-    accessorKey: 'custom_url',
-    header: 'Custom Name',
+    accessorKey: 'video_count',
+    header: 'Video Count',
     cell: ({ row }) => (
-      <div className='capitalize'>{row.getValue('custom_url')}</div>
+      <div className='capitalize'>{row.getValue('video_count')}</div>
     ),
   },
+  // {
+  //   accessorKey: 'country',
+  //   header: 'Country',
+  //   cell: ({ row }) => (
+  //     <div className='capitalize'>{row.getValue('country')}</div>
+  //   ),
+  // },
+  // {
+  //   accessorKey: 'custom_url',
+  //   header: 'Custom Name',
+  //   cell: ({ row }) => (
+  //     <div className='capitalize'>{row.getValue('custom_url')}</div>
+  //   ),
+  // },
   {
     accessorKey: 'image_url',
     header: 'Picture',
-    cell: ({ row }) => {
-      return (
-        <Avatar>
-          <img
-            src='https://hhltmpiizvmmcjlkxeos.supabase.co/storage/v1/object/public/images/56457wbv4rtdfgh.jpeg'
-            alt=''
-          />
-          {/* <img src={row.getValue('image_url')} alt='' /> */}
-          <AvatarFallback>CN</AvatarFallback>
-        </Avatar>
-      )
-    },
+    cell: ({ row }) => (
+      <Avatar>
+        <AvatarImage src={row.getValue('image_url')} alt='@shadcn' />
+        <AvatarFallback>
+          {row.getValue('title')[0].toUpperCase()}
+          {/* Update to random image like GitHub */}
+        </AvatarFallback>
+      </Avatar>
+    ),
   },
 ]
 

@@ -58,7 +58,11 @@ export default async function DashboardPage() {
 }
 
 async function getData() {
-  let { data: channels, error } = await supabase.from('channels').select('*')
+  let { data: channels, error } = await supabase
+    .from('channels')
+    .select(
+      'image_url, custom_url, country, view_count, title, description, subscriber_count, video_count'
+    )
 
   if (error) {
     throw new Error('Failed to fetch data')
