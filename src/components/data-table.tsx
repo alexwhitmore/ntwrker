@@ -120,15 +120,18 @@ export const columns: ColumnDef<any>[] = [
   {
     accessorKey: 'image_url',
     header: 'Picture',
-    cell: ({ row }) => (
-      <Avatar>
-        <AvatarImage src={row.getValue('image_url')} alt='@shadcn' />
-        <AvatarFallback>
-          {row.getValue('title')[0].toUpperCase()}
-          {/* Update to random image like GitHub */}
-        </AvatarFallback>
-      </Avatar>
-    ),
+    cell: ({ row }) => {
+      const channelTitle: string = row.getValue('title')
+      return (
+        <Avatar>
+          <AvatarImage src={row.getValue('image_url')} alt='@shadcn' />
+          <AvatarFallback>
+            {channelTitle[0].toUpperCase()}
+            {/* Update to random image like GitHub */}
+          </AvatarFallback>
+        </Avatar>
+      )
+    },
   },
 ]
 
